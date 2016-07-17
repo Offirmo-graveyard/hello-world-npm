@@ -1,0 +1,51 @@
+{
+  "name": "prefixed-log",
+  "version": "1.0.0",
+  "description": "A wrapper around a console.log compatible function to add a prefix to output",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Offirmo/prefixed-log.git"
+  },
+  "keywords": [
+    "log"
+  ],
+  "author": "Offirmo <offirmo.net@gmail.com>",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/Offirmo/prefixed-log/issues"
+  },
+  "homepage": "https://github.com/Offirmo/prefixed-log#readme",
+  "1main": "dist/src.es2015/index.js",
+  "2main": "dist/index.node-stable.js",
+  "main": "dist/prefixed_log.umd.js",
+  "4main": "index.js",
+  "jsnext:main": "dist/src.es2015/index.js",
+  "typings": "dist/src.es2015/index.d.ts",
+  "browser": "dist/prefixed_log.umd.js",
+  "scripts": {
+    "tsc": "tsc",
+    "build": "node scripts/build.js",
+    "test": "test",
+    "dev1": "tsc --watch"
+  },
+  "dependencies": {
+    "lodash": "^4.13.1"
+  },
+  "devDependencies": {
+    "@types/lodash": "0.0.26-alpha",
+    "@types/node": "^4.0.28-alpha",
+    "babel-preset-es2015-node-rollup": "^6.1.0",
+    "babel-preset-es2015-rollup": "^1.1.1",
+    "babel-preset-stage-1": "^6.5.0",
+    "chai": "^3.5.0",
+    "fs-extra": "^0.30.0",
+    "mocha": "^2.5.3",
+    "rollup": "^0.34.1",
+    "rollup-plugin-babel": "^2.4.0",
+    "rollup-plugin-uglify": "^1.0.1",
+    "sinon": "^1.17.4",
+    "ts-node": "^0.9.3",
+    "typescript": "^2.0.0-dev.20160705",
+    "typings": "^1.3.1"
+  }
+}
