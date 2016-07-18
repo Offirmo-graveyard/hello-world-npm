@@ -1,7 +1,7 @@
 # Hello world (npm)
 
-While this module is a real npm module, its main purpose is to experiment a "modern" (typescript or ES6)
- module consumption by various environments, including legacy.
+A hello world npm module whose main purpose is to experiment a 'modern' (typescript / ES6)
+module declaration and its consumption by various environments, including legacy.
 
 This module is aiming at having optimal consumption by :
 * typescript 1 & 2
@@ -23,3 +23,4 @@ References :
 * https://ponyfoo.com/articles/why-i-write-plain-javascript-modules
 * http://www.2ality.com/2015/12/bundling-modules-future.html
 * https://www.smashingmagazine.com/2016/02/writing-next-generation-reusable-javascript-modules/
+* https://medium.com/@mweststrate/how-to-create-strongly-typed-npm-modules-1e1bda23a7f4#.74ko6tal3

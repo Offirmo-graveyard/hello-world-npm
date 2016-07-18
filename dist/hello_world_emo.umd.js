@@ -4,6 +4,7 @@
     (global.hello_world_emo = factory(global._));
 }(this, function (_) { 'use strict';
 
+    console.log('[hello-world-emo] Hello from ' + __filename);
     var default_template = _.template('hello, ${ target } :-(');
     function hello() {
         var target = arguments.length <= 0 || arguments[0] === undefined ? 'World' : arguments[0];

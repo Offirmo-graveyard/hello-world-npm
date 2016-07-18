@@ -1,6 +1,6 @@
 {
   "name": "hello-world-emo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A hello world npm module whose main purpose is to experiment a 'modern' (typescript / ES6) module declaration and its consumption by various environments, including legacy.",
   "repository": {
     "type": "git",

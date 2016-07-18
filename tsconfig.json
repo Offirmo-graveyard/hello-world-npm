@@ -1,17 +1,17 @@
 {
 	"compilerOptions": {
-		"allowJs": false,
 		"listFiles": true,
+		"pretty": true,
 
+		"allowJs": false,
 		"noImplicitAny": true,
 		"noImplicitReturns": true,
 		"strictNullChecks": true,
 
+		"target": "es6",
 		"declaration": true,
-		"outDir": "dist/src.es2015",
-		"pretty": true,
 		"sourceMap": true,
-		"target": "es6"
+		"outDir": "dist/src.es2015"
 	},
 	"files": [
 		"src/index.ts"
