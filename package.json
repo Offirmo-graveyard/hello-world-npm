@@ -1,7 +1,7 @@
 {
-  "name": "prefixed-log",
+  "name": "hello-world-emo",
   "version": "1.0.0",
-  "description": "A wrapper around a console.log compatible function to add a prefix to output",
+  "description": "A hello world npm module whose main purpose is to experiment a 'modern' (typescript / ES6) module declaration and its consumption by various environments, including legacy.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Offirmo/prefixed-log.git"
