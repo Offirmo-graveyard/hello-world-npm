@@ -1,6 +1,6 @@
 {
   "name": "hello-world-emo",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A hello world npm module whose main purpose is to experiment a 'modern' (typescript / ES6) module declaration and its consumption by various environments, including legacy.",
   "repository": {
     "type": "git",
@@ -15,10 +15,7 @@
     "url": "https://github.com/Offirmo/hello-world-npm/issues"
   },
   "homepage": "https://github.com/Offirmo/hello-world-npm#readme",
-  "1main": "dist/src.es2015/index.js",
-  "2main": "dist/index.node-stable.js",
-  "main": "dist/prefixed_log.umd.js",
-  "4main": "index.js",
+  "main": "dist/index.node-stable.js",
   "jsnext:main": "dist/src.es2015/index.js",
   "typings": "dist/src.es2015/index.d.ts",
   "browser": "dist/prefixed_log.umd.js",

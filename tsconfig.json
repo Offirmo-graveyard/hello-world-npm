@@ -1,11 +1,13 @@
 {
 	"compilerOptions": {
 		"allowJs": false,
-		"declaration": true,
 		"listFiles": true,
-		"moduleResolution": "node",
+
 		"noImplicitAny": true,
 		"noImplicitReturns": true,
+		"strictNullChecks": true,
+
+		"declaration": true,
 		"outDir": "dist/src.es2015",
 		"pretty": true,
 		"sourceMap": true,

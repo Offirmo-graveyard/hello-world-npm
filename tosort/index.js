@@ -1,5 +1,5 @@
 'use strict';
-console.log('Hello from prefixed-log root index.js');
+console.log('Hello from hello-world-emo root index.js');
 
 var NODE_MAJOR = parseInt(process.version.slice(1, process.version.indexOf('.'), 10));
 console.log('NODE_MAJOR = ' + NODE_MAJOR);

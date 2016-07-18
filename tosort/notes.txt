@@ -1,0 +1,27 @@
+
+		"moduleResolution": "node",
+		"noImplicitAny": true,
+		"noImplicitReturns": true,
+		"strictNullChecks": true,
+
+
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-es2015-node4": "^2.1.0",
+    "babel-preset-es2015-node6": "^0.2.0",
+
+
+    "babel-plugin-transform-es2015-destructuring": "^6.9.0",
+    "babel-plugin-transform-es2015-function-name": "^6.9.0",
+    "babel-plugin-transform-es2015-parameters": "^6.9.0",
+
+	"files": [
+		"typings/index.d.ts",
+		"src/index.ts"
+	],
+
+  "1main": "dist/src.es2015/index.js",
+  "main": "dist/index.node-stable.js",
+  "3main": "dist/prefixed_log.umd.js",
+  "4main": "index.js",
+  "jsnext:main": "dist/src.es2015/index.js",
+  "typings": "dist/src.es2015/index.d.ts",
