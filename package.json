@@ -1,20 +1,20 @@
 {
   "name": "hello-world-emo",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A hello world npm module whose main purpose is to experiment a 'modern' (typescript / ES6) module declaration and its consumption by various environments, including legacy.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Offirmo/prefixed-log.git"
+    "url": "git+https://github.com/Offirmo/hello-world-npm.git"
   },
   "keywords": [
-    "log"
+    "hello"
   ],
   "author": "Offirmo <offirmo.net@gmail.com>",
   "license": "Unlicense",
   "bugs": {
-    "url": "https://github.com/Offirmo/prefixed-log/issues"
+    "url": "https://github.com/Offirmo/hello-world-npm/issues"
   },
-  "homepage": "https://github.com/Offirmo/prefixed-log#readme",
+  "homepage": "https://github.com/Offirmo/hello-world-npm#readme",
   "1main": "dist/src.es2015/index.js",
   "2main": "dist/index.node-stable.js",
   "main": "dist/prefixed_log.umd.js",
@@ -32,7 +32,7 @@
     "lodash": "^4.13.1"
   },
   "devDependencies": {
-    "@types/lodash": "0.0.26-alpha",
+    "@types/lodash": "0.0.27",
     "@types/node": "^4.0.28-alpha",
     "babel-preset-es2015-node-rollup": "^6.1.0",
     "babel-preset-es2015-rollup": "^1.1.1",
@@ -45,6 +45,6 @@
     "rollup-plugin-uglify": "^1.0.1",
     "sinon": "^1.17.4",
     "ts-node": "^0.9.3",
-    "typescript": "^2.0.0-dev.20160705"
+    "typescript": "^2.0.0-beta"
   }
 }
