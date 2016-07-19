@@ -1,21 +1,47 @@
-# Hello world (npm)
+# Hello World Emo
+[![NPM version](https://badge.fury.io/js/hello-world-emo.png)](http://badge.fury.io/js/hello-world-emo)
+[![license](http://img.shields.io/badge/license-public_domain-brightgreen.png)](http://unlicense.org/)
 
-A hello world npm module whose main purpose is to experiment a 'modern' (typescript / ES6)
+A hello world npm module whose real purpose is to experiment a 'modern' (typescript / ES6)
 module declaration and its consumption by various environments, including legacy.
 
+This is an "emo" version, in reference to this article: [JavaScript Modules: Welcome to My Emo Hellscape](https://medium.com/@trek/last-week-i-had-a-small-meltdown-on-twitter-about-npms-future-plans-around-front-end-packaging-b424dd8d367a).
+
+## installation
+
+```sh
+npm i --save hello-world-emo
+```
+
+Then in your code:
+* node stable (4): `const hello = require('hello-world-emo')`
+* node legacy (<4): `var hello = require('hello-world-emo/dist/index.node-legacy')`
+* ES2015/ES6: `import hello from 'hello-world-emo'`
+  * users with rollup should be covered with the "jsnext" entry in package.json, pointing to `dist/src.es2015/index.js`
+* typescript: NOT WORKING !
+
+## Usage
+
+```js
+hello()           --> hello, World :-(
+hello('Offirmo')  --> hello, Offirmo :-(
+```
+What did you expect ?
+
+
+## Technical
 This module is aiming at having optimal consumption by :
+* node stable, latest and legacy
+* browser: vanilla, requireJs, SystemJS...
+* ES6
+  * mainly for rollup tree-shaking (jsnext)
+    * https://github.com/rollup/rollup
 * typescript 1 & 2
   * https://www.typescriptlang.org/docs/handbook/modules.html
   * https://blog.oio.de/2014/01/31/an-introduction-to-typescript-module-system/
   * https://github.com/basarat/ts-npm-module-consume
   * http://stackoverflow.com/questions/12687779/how-do-you-produce-a-d-ts-typings-definition-file-from-an-existing-javascript
   * https://www.typescriptlang.org/docs/handbook/writing-declaration-files.html
-* ES6
-  * mainly for rollup tree-shaking (jsnext)
-    * https://github.com/rollup/rollup
-* node 6, 4 and legacy
-* browser
-  * UMD and minification
  
 
 References :
