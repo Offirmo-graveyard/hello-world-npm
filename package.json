@@ -22,7 +22,7 @@
   "browser": "dist/prefixed_log.umd.js",
   "scripts": {
     "__prod": "~~~~~~~ PRODUCTION ~~~~~~~",
-    "test": "test",
+    "test": "echo 'should write tests ;-)'",
     "build": "node scripts/build.js",
     "np": "np",
     "__dev": "~~~~~~~ DEVELOPMENT ~~~~~~~",
