@@ -8,7 +8,7 @@ console.log('[hello-world-emo] Hello from ' + __filename);
 function hello() {
     var target = arguments.length <= 0 || arguments[0] === undefined ? 'World' : arguments[0];
 
-    console.log('hello, ' + target + ' :-(');
+    console.log('Hello, ' + target + ' :-(');
 }
 
 exports.hello = hello;

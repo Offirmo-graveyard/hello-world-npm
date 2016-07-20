@@ -14,17 +14,19 @@ npm i --save hello-world-emo
 ```
 
 Then in your code:
-* node stable (4): `const hello = require('hello-world-emo')`
-* node legacy (<4): `var hello = require('hello-world-emo/dist/index.node-legacy')`
-* ES2015/ES6: `import hello from 'hello-world-emo'`
-  * users with rollup should be covered with the "jsnext" entry in package.json, pointing to `dist/src.es2015/index.js`
-* typescript: NOT WORKING !
+* node stable (4): `const hello = require('hello-world-emo').hello`
+* node legacy (<4): `var hello = require('hello-world-emo/dist/index.node-legacy').hello`
+* ES2015/ES6: `import { hello } from 'hello-world-emo'`
+  * a "jsnext" entry is provided in package.json for rollup users, pointing to ES6 code
+* typescript: `import { hello } from 'hello-world-emo'`
+* browser
+  * TODO
 
 ## Usage
 
 ```js
-hello()           --> hello, World :-(
-hello('Offirmo')  --> hello, Offirmo :-(
+hello()           --> Hello, World :-(
+hello('Offirmo')  --> Hello, Offirmo :-(
 ```
 What did you expect ?
 

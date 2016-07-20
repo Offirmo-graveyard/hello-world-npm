@@ -5,5 +5,5 @@ console.log(`[hello-world-emo] Hello from ${__filename}`)
 
 export function hello(target: string = 'World'): void
 {
-	console.log(`hello, ${ target } :-(`)
+	console.log(`Hello, ${ target } :-(`)
 }
