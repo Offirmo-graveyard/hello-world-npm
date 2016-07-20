@@ -19,11 +19,11 @@
 		"sourceMap": true,
 		"outDir": "dist/es6"
 	},
-	"files": [
-		"src/index.ts"
-	],
 	"exclude": [
+		"dist",
 		"node_modules",
-		"dist"
+		"scripts",
+		"test",
+		"tosort"
 	]
 }

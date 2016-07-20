@@ -14,6 +14,7 @@ npm i --save hello-world-emo
 ```
 
 Then in your code:
+* node 6+ : `const { hello } = require('hello-world-emo')`
 * node stable (4): `const hello = require('hello-world-emo').hello`
 * node legacy (<4): `var hello = require('hello-world-emo/dist/index.node-legacy').hello`
 * ES2015/ES6: `import { hello } from 'hello-world-emo'`

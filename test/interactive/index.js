@@ -4,7 +4,7 @@
 
 ////////////////////////////////////////////////////////////
 
-const hello = require('../../dist/index.node-stable').hello
+const { hello, goodbye } = require('../../dist/index.node-stable')
 const _ = require('lodash');
 const vorpal = require('vorpal')();
 
@@ -19,9 +19,16 @@ vorpal.delimiter('test>');
 vorpal.log('Hello from vorpal !');
 
 vorpal
-.command('hello <target>', 'call module under test with target')
+.command('hello <target>', 'call MUT.hello(target)')
 .action(function(args, callback) {
 	hello(args.target)
+	callback();
+});
+
+vorpal
+.command('goodbye <target>', 'call MUT.goodbye(target)')
+.action(function(args, callback) {
+	goodbye(args.target)
 	callback();
 });
 

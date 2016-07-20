@@ -68,9 +68,16 @@ Promise.resolve()
 
 function transpile_typescript_to_es6() {
 	return tsc.compile(
+		[],
+		{
+			'project': '.'
+		}
+	)
+	/*
+	return tsc.compile(
 		tsconfig.json.files,
 		tsconfig.json.compilerOptions
-	)
+	)*/
 }
 
 function transpile_typescript_to_es5() {
