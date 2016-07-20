@@ -1,7 +1,6 @@
-import * as _ from 'lodash';
+// for diagnostic of which version was picked
 console.log(`[hello-world-emo] Hello from ${__filename}`);
-const default_template = _.template('hello, ${ target } :-(');
 export default function hello(target = 'World') {
-    console.log(default_template({ target }));
+    console.log(`hello, ${target} :-(`);
 }
 //# sourceMappingURL=index.js.map

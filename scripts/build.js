@@ -56,24 +56,41 @@ Promise.resolve()
 	// Clean up the output directory
 	fs.emptyDirSync('dist')
 })
-.then(transpile_typescript_to_es2015)
-//.then(transpile_typescript_to_es2015_amd)
+.then(transpile_typescript_to_es6)
+//.then(transpile_typescript_to_es6_amd)
+//.then(transpile_typescript_to_es5)
 .then(transpile_es2015_to_bundles)
 .then(() => console.log('SUCCESS'), console.error)
 
-function transpile_typescript_to_es2015() {
+
+// --module KIND  Specify module code generation:
+// 'commonjs', 'amd', 'system', 'umd' or 'es2015'
+
+function transpile_typescript_to_es6() {
 	return tsc.compile(
 		tsconfig.json.files,
 		tsconfig.json.compilerOptions
 	)
 }
 
-function transpile_typescript_to_es2015_amd() {
+function transpile_typescript_to_es5() {
 	return tsc.compile(
 		tsconfig.json.files,
 		Object.assign({}, tsconfig.json.compilerOptions, {
-			'declaration': false,
-			'outDir': 'dist/src.es2015.amd',
+			//'declaration': false,
+			//'module': 'commonjs',
+			'outDir': 'dist/es5',
+			'target': 'es5'
+		})
+	)
+}
+
+function transpile_typescript_to_es6_amd() {
+	return tsc.compile(
+		tsconfig.json.files,
+		Object.assign({}, tsconfig.json.compilerOptions, {
+			//'declaration': false,
+			'outDir': 'dist/es6.amd',
 			'module': 'amd'
 		})
 	)
@@ -83,7 +100,7 @@ function transpile_es2015_to_bundles() {
 	// Compile source code into a distributable format with Babel and Rollup
 	const allBundles = bundles.map(config => {
 		return rollup.rollup({
-			entry: 'dist/src.es2015/index.js',
+			entry: 'dist/es6/index.js',
 			external: Object.keys(package.json.dependencies),
 			plugins: [
 				rollup_babel({

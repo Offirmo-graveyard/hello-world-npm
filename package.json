@@ -15,33 +15,40 @@
     "url": "https://github.com/Offirmo/hello-world-npm/issues"
   },
   "homepage": "https://github.com/Offirmo/hello-world-npm#readme",
-  "main": "dist/index.node-stable.js",
-  "jsnext:main": "dist/src.es2015/index.js",
-  "typings": "dist/src.es2015/index.d.ts",
+  "mainX": "dist/index.node-stable.js",
+  "main": "dist/es5/index.js",
+  "jsnext:main": "dist/es6/index.js",
+  "typings": "dist/es6/index.d.ts",
   "browser": "dist/prefixed_log.umd.js",
   "scripts": {
-    "tsc": "tsc",
-    "build": "node scripts/build.js",
+    "__prod": "~~~~~~~ PRODUCTION ~~~~~~~",
     "test": "test",
-    "dev1": "tsc --watch"
+    "build": "node scripts/build.js",
+    "preversion": "npm run build",
+    "do_release": "np patch",
+    "__dev": "~~~~~~~ DEVELOPMENT ~~~~~~~",
+    "dev1": "tsc --watch",
+    "__misc": "~~~~~~~ MISC ~~~~~~~",
+    "tsc": "tsc"
   },
   "dependencies": {
     "lodash": "^4.13.1"
   },
   "devDependencies": {
-    "@types/lodash": "0.0.27",
-    "@types/node": "^4.0.28-alpha",
+    "@types/lodash": "0.0.28",
+    "@types/node": "^4.0.30",
     "babel-preset-es2015-node-rollup": "^6.1.0",
     "babel-preset-es2015-rollup": "^1.1.1",
     "babel-preset-stage-1": "^6.5.0",
     "chai": "^3.5.0",
     "fs-extra": "^0.30.0",
     "mocha": "^2.5.3",
+    "np": "^2.6.0",
     "rollup": "^0.34.1",
     "rollup-plugin-babel": "^2.4.0",
     "rollup-plugin-uglify": "^1.0.1",
     "sinon": "^1.17.4",
-    "ts-node": "^0.9.3",
-    "typescript": "^2.0.0-beta"
+    "ts-node": "^1.0.0",
+    "typescript": "^2.1.0-dev.20160720"
   }
 }

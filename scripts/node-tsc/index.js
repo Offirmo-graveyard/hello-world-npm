@@ -37,7 +37,7 @@ function compile(files, options) {
 
 		var stdout = ''
 		var stderr = ''
-		console.log(`Spawn : spawning ${executable}`, params);
+		console.log(`Spawn : spawning ${executable}` + params.join(' '));
 		const spawn_instance = spawn(executable, params, options);
 
 		function fail(reason) {
