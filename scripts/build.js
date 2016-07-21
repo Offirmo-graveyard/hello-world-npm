@@ -7,7 +7,7 @@ const rollup = require('rollup')
 const rollup_babel = require('rollup-plugin-babel')
 const rollup_uglify = require('rollup-plugin-uglify')
 
-const tsc = require('./node-tsc')
+const tsc = require('node-typescript-compiler')
 const package = {
 	json: require('../package.json')
 }
@@ -19,12 +19,7 @@ const MODULE_NAME = _.snakeCase(package.json.name)
 
 console.log(`* Building module ${MODULE_NAME}...`)
 
-const bundles = [
-	// ES6 for rollup and its "jsnext:main" package.json property
-	/*{
-		format: 'es6', ext: '.js', plugins: [],
-		babelPresets: ['stage-1'], babelPlugins: []
-	},*/
+const rollup_bundles = [
 	// node "stable" version
 	{
 		format: 'cjs', ext: '.node-stable.js', plugins: [],
@@ -35,7 +30,7 @@ const bundles = [
 		format: 'cjs', ext: '.node-legacy.js', plugins: [],
 		babelPresets: ['es2015-rollup'], babelPlugins: []
 	},
-	// other
+	// browser / other
 	{
 		format: 'umd', ext: '.umd.js', plugins: [],
 		babelPresets: ['es2015-rollup', 'stage-1'], babelPlugins: [],
@@ -49,63 +44,24 @@ const bundles = [
 ];
 
 
-
-
 Promise.resolve()
 .then(() => {
 	// Clean up the output directory
 	fs.emptyDirSync('dist')
 })
 .then(transpile_typescript_to_es6)
-//.then(transpile_typescript_to_es6_amd)
-//.then(transpile_typescript_to_es5)
-.then(transpile_es2015_to_bundles)
+.then(transpile_es6_to_bundles)
 .then(() => console.log('SUCCESS'), console.error)
 
-
-// --module KIND  Specify module code generation:
-// 'commonjs', 'amd', 'system', 'umd' or 'es2015'
-
 function transpile_typescript_to_es6() {
-	return tsc.compile(
-		[],
-		{
-			'project': '.'
-		}
-	)
-	/*
-	return tsc.compile(
-		tsconfig.json.files,
-		tsconfig.json.compilerOptions
-	)*/
+	return tsc.compile({
+		'project': '.'
+	})
 }
 
-function transpile_typescript_to_es5() {
-	return tsc.compile(
-		tsconfig.json.files,
-		Object.assign({}, tsconfig.json.compilerOptions, {
-			//'declaration': false,
-			//'module': 'commonjs',
-			'outDir': 'dist/es5',
-			'target': 'es5'
-		})
-	)
-}
-
-function transpile_typescript_to_es6_amd() {
-	return tsc.compile(
-		tsconfig.json.files,
-		Object.assign({}, tsconfig.json.compilerOptions, {
-			//'declaration': false,
-			'outDir': 'dist/es6.amd',
-			'module': 'amd'
-		})
-	)
-}
-
-function transpile_es2015_to_bundles() {
-	// Compile source code into a distributable format with Babel and Rollup
-	const allBundles = bundles.map(config => {
+// Compile source code into a distributable format with Rollup+Babel
+function transpile_es6_to_bundles() {
+	const allBundles = rollup_bundles.map(config => {
 		return rollup.rollup({
 			entry: 'dist/es6/index.js',
 			external: Object.keys(package.json.dependencies),
@@ -127,21 +83,3 @@ function transpile_es2015_to_bundles() {
 	})
 	return Promise.all(allBundles)
 }
-
-
-/*
-let promise = Promise.resolve();
-
-// Copy package.json and LICENSE.txt
-promise = promise.then(() => {
-	delete package.json.private;
-	delete package.json.devDependencies;
-	delete package.json.scripts;
-	delete package.json.eslintConfig;
-	delete package.json.babel;
-	fs.writeFileSync('dist/package.json', JSON.stringify(package.json, null, '  '), 'utf-8');
-	fs.writeFileSync('dist/LICENSE', fs.readFileSync('LICENSE', 'utf-8'), 'utf-8');
-});
-
-promise.catch(err => console.error(err.stack)); // eslint-disable-line no-console
-*/

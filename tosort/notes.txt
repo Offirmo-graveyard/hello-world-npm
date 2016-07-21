@@ -1,3 +1,15 @@
+import * as _ from 'lodash'
+
+console.log(`[hello-world-emo] Hello from ${__filename}`)
+
+const default_template = _.template('hello, ${ target } :-(')
+
+export default function hello(target: string = 'World'): void
+{
+	console.log(default_template({target}))
+}
+
+
 
 		"moduleResolution": "node",
 		"noImplicitAny": true,
@@ -25,3 +37,61 @@
   "4main": "index.js",
   "jsnext:main": "dist/src.es2015/index.js",
   "typings": "dist/src.es2015/index.d.ts",
+
+
+// --module KIND  Specify module code generation:
+// 'commonjs', 'amd', 'system', 'umd' or 'es2015'
+
+function transpile_typescript_to_es6() {
+	return tsc.compile({
+		'project': '.'
+	})
+	/*
+	return tsc.compile(
+		tsconfig.json.compilerOptions,
+		tsconfig.json.files
+	)*/
+}
+
+function transpile_typescript_to_es5() {
+	return tsc.compile(
+		Object.assign({}, tsconfig.json.compilerOptions, {
+			//'declaration': false,
+			//'module': 'commonjs',
+			'outDir': 'dist/es5',
+			'target': 'es5'
+		}),
+		tsconfig.json.files
+	)
+}
+
+function transpile_typescript_to_es6_amd() {
+	return tsc.compile(
+		Object.assign({}, tsconfig.json.compilerOptions, {
+			//'declaration': false,
+			'outDir': 'dist/es6.amd',
+			'module': 'amd'
+		}),
+		tsconfig.json.files,
+	)
+}
+
+
+
+
+/*
+let promise = Promise.resolve();
+
+// Copy package.json and LICENSE.txt
+promise = promise.then(() => {
+	delete package.json.private;
+	delete package.json.devDependencies;
+	delete package.json.scripts;
+	delete package.json.eslintConfig;
+	delete package.json.babel;
+	fs.writeFileSync('dist/package.json', JSON.stringify(package.json, null, '  '), 'utf-8');
+	fs.writeFileSync('dist/LICENSE', fs.readFileSync('LICENSE', 'utf-8'), 'utf-8');
+});
+
+promise.catch(err => console.error(err.stack)); // eslint-disable-line no-console
+*/
