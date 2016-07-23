@@ -16,10 +16,9 @@
   },
   "homepage": "https://github.com/Offirmo/hello-world-npm#readme",
   "main": "dist/index.node-stable.js",
-  "mainX": "dist/es5/index.js",
   "jsnext:main": "dist/es6/index.js",
   "typings": "dist/es6/index.d.ts",
-  "browser": "dist/prefixed_log.umd.js",
+  "browser": "dist/hello_world_emo.umd.js",
   "scripts": {
     "__prod": "~~~~~~~ PRODUCTION ~~~~~~~",
     "test": "echo 'should write tests ;-)'",
