@@ -32,6 +32,19 @@ hello('Offirmo')  --> Hello, Offirmo :-(
 What did you expect ?
 
 
+## Contributing
+```shell
+nvm use 6
+npm run test:quick
+npm run test:interactive
+```
+Then
+```shell
+npm run build
+npm run np patch
+```
+
+
 ## Technical
 This module is aiming at having optimal consumption by :
 * node stable, latest and legacy

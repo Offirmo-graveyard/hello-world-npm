@@ -22,12 +22,17 @@
   "scripts": {
     "__prod": "~~~~~~~ PRODUCTION ~~~~~~~",
     "test": "echo 'should write tests ;-)'",
+    "test:quick": "test/quick/index.ts",
+    "test:interactive": "test/interactive/index.js",
     "build": "node scripts/build.js",
     "np": "np",
     "__dev": "~~~~~~~ DEVELOPMENT ~~~~~~~",
     "dev1": "tsc --watch",
+    "tslint": "npm run _all_own_ts_files -- tslint",
     "__misc": "~~~~~~~ MISC ~~~~~~~",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "__helpers": "----------- Helpers -----------",
+    "_all_own_ts_files": "find-glob -0 '**/*.{ts,tsx}' '!{dist,node_modules,scripts}/**' | xargs -0"
   },
   "dependencies": {
     "lodash": "^4.13.1"
@@ -39,15 +44,17 @@
     "babel-preset-es2015-rollup": "^1.1.1",
     "babel-preset-stage-1": "^6.5.0",
     "chai": "^3.5.0",
+    "find-glob": "^2.1.0",
     "fs-extra": "^0.30.0",
     "mocha": "^2.5.3",
-    "node-typescript-compiler": "^1.0.0",
+    "node-typescript-compiler": "^1.0.1",
     "np": "^2.6.0",
     "rollup": "^0.34.1",
     "rollup-plugin-babel": "^2.4.0",
     "rollup-plugin-uglify": "^1.0.1",
     "sinon": "^1.17.4",
     "ts-node": "^1.0.0",
+    "tslint": "^3.14.0",
     "typescript": "^2.1.0-dev.20160721",
     "vorpal": "^1.11.2"
   }
