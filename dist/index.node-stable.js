@@ -2,11 +2,15 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-function hello(target = 'World') {
+function hello() {
+    let target = arguments.length <= 0 || arguments[0] === undefined ? 'World' : arguments[0];
+
     console.log(`Hello, ${ target } :-(`);
 }
 
-function goodbye(target = 'World') {
+function goodbye() {
+    let target = arguments.length <= 0 || arguments[0] === undefined ? 'World' : arguments[0];
+
     console.log(`Goodbye, ${ target } :-(`);
 }
 

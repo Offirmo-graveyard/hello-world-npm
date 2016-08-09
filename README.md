@@ -33,14 +33,27 @@ What did you expect ?
 
 
 ## Contributing
+npm 3 is needed for installing deps.
+```shell
+rm -rf node_modules
+nvm use 6
+npm i
+```
+
+Node 6 is needed for tests
 ```shell
 nvm use 6
 npm run test:quick
 npm run test:interactive
 ```
-Then
+
+Then **switch back to node 4** for generating
 ```shell
+nvm use 4
 npm run build
+```
+Eventually, commit and release
+```shell
 npm run np patch
 ```
 

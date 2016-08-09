@@ -15,6 +15,10 @@
     "url": "https://github.com/Offirmo/hello-world-npm/issues"
   },
   "homepage": "https://github.com/Offirmo/hello-world-npm#readme",
+  "engines": {
+    "node": "^4",
+    "npm": "^3"
+  },
   "main": "dist/index.node-stable.js",
   "jsnext:main": "dist/es6/index.js",
   "typings": "dist/es6/index.d.ts",
@@ -38,7 +42,7 @@
     "lodash": "^4.13.1"
   },
   "devDependencies": {
-    "@types/lodash": "^0.0.28",
+    "@types/lodash": "^4.14.30",
     "@types/node": "^4.0.30",
     "babel-preset-es2015-node-rollup": "^6.1.0",
     "babel-preset-es2015-rollup": "^1.1.1",
@@ -46,7 +50,7 @@
     "chai": "^3.5.0",
     "find-glob": "^2.1.0",
     "fs-extra": "^0.30.0",
-    "mocha": "^2.5.3",
+    "mocha": "^3.0.2",
     "node-typescript-compiler": "^1.0.1",
     "np": "^2.6.0",
     "rollup": "^0.34.1",
