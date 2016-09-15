@@ -53,7 +53,7 @@
     "mocha": "^3.0.2",
     "node-typescript-compiler": "^1.0.1",
     "np": "^2.6.0",
-    "rollup": "^0.34.1",
+    "rollup": "^0.35.9",
     "rollup-plugin-babel": "^2.4.0",
     "rollup-plugin-uglify": "^1.0.1",
     "sinon": "^1.17.4",
