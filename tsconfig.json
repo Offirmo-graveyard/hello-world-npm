@@ -1,4 +1,5 @@
 {
+	"compileOnSave": false,
 	"compilerOptions": {
 		"listFiles": true,
 		"pretty": true,
