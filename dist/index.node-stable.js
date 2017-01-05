@@ -3,13 +3,13 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 function hello() {
-    let target = arguments.length <= 0 || arguments[0] === undefined ? 'World' : arguments[0];
+    let target = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'World';
 
     console.log(`Hello, ${ target } :-(`);
 }
 
 function goodbye() {
-    let target = arguments.length <= 0 || arguments[0] === undefined ? 'World' : arguments[0];
+    let target = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'World';
 
     console.log(`Goodbye, ${ target } :-(`);
 }
