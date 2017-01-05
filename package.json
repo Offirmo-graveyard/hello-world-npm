@@ -59,7 +59,7 @@
     "sinon": "^1.17.4",
     "ts-node": "^2.0.0",
     "tslint": "^4.2.0",
-    "typescript": "^2.1.0-dev.20160721",
+    "typescript": "^2",
     "vorpal": "^1.11.2"
   }
 }

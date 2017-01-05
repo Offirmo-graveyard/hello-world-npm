@@ -39,7 +39,7 @@ rm -rf node_modules
 npm i
 ```
 
-tests
+tests (node >= 6)
 ```shell
 npm run test:quick
 npm run test:interactive
