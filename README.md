@@ -33,21 +33,19 @@ What did you expect ?
 
 
 ## Contributing
-npm 3 is needed for installing deps.
+npm 3 is needed for installing deps (node >= 6)
 ```shell
 rm -rf node_modules
-nvm use 6
 npm i
 ```
 
-Node 6 is needed for tests
+tests
 ```shell
-nvm use 6
 npm run test:quick
 npm run test:interactive
 ```
 
-Then **switch back to node 4** for generating
+Then **switch back to the lowest non-legacy node we want to officially support** (earlier will be "legacy") for generating
 ```shell
 nvm use 4
 npm run build
@@ -71,7 +69,7 @@ This module is aiming at having optimal consumption by :
   * https://github.com/basarat/ts-npm-module-consume
   * http://stackoverflow.com/questions/12687779/how-do-you-produce-a-d-ts-typings-definition-file-from-an-existing-javascript
   * https://www.typescriptlang.org/docs/handbook/writing-declaration-files.html
- 
+
 
 References :
 * https://medium.com/@tarkus/how-to-build-and-publish-es6-modules-today-with-babel-and-rollup-4426d9c7ca71#.5pxa9u2l1

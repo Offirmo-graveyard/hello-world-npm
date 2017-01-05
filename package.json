@@ -16,8 +16,8 @@
   },
   "homepage": "https://github.com/Offirmo/hello-world-npm#readme",
   "engines": {
-    "node": "^4",
-    "npm": "^3"
+    "node": ">=4",
+    "npm": ">=3"
   },
   "main": "dist/index.node-stable.js",
   "jsnext:main": "dist/es6/index.js",
