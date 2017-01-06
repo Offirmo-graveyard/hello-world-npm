@@ -1,4 +1,10 @@
 
+v2.1.5 2017/01/05
+v2.1.4 2017/01/05
+- repair accidentally advertised node 4+ incompatibility (spotted by yarn)
+- upgrade some dependencies
+- (no code change)
+
 v2.1.3 2016/08/09
 - repair node 4 compatibility
 - upgrade some dependencies

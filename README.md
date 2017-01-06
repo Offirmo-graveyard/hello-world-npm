@@ -52,7 +52,7 @@ npm run build
 ```
 Eventually, commit and release
 ```shell
-npm run np patch
+npm run np -- patch
 ```
 
 
