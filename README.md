@@ -1,3 +1,5 @@
+**DEPRECATED REPO: This tool has been re-integrated in my monorepo: https://github.com/Offirmo/offirmo-monorepo/tree/master/4-incubator/hello-world-npm**
+
 # Hello World Emo
 [![NPM version](https://badge.fury.io/js/hello-world-emo.png)](http://badge.fury.io/js/hello-world-emo)
 [![license](http://img.shields.io/badge/license-public_domain-brightgreen.png)](http://unlicense.org/)
